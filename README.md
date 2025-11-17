@@ -111,4 +111,5 @@ El usuario podrá regresar al inicio o enviar otro mensaje si lo desea.
 Este enlace dirige directamente a la página principal (inicio) del sitio académico.
 
 👉 **Sitio publicado:**  
-https://sitiopersonalacademico.infinityfreeapp.com/
+https://sitiopersonalacademico.infinityfree.me/
+
