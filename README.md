@@ -111,4 +111,4 @@ El usuario podrá regresar al inicio o enviar otro mensaje si lo desea.
 Este enlace dirige directamente a la página principal (inicio) del sitio académico.
 
 👉 **Sitio publicado:**  
-https://TU-ENLACE-DE-HOSTING-AQUI.com/mi-sitio-academico-utpl
+sitiopersonalacademico.infinityfreeapp.com
