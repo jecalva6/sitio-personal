@@ -1,0 +1,407 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fondo general con azules marino suaves */
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.35), transparent 55%),
+        linear-gradient(135deg, #e5edf9, #f4f7fb);
+    color: #111827;
+    line-height: 1.6;
+}
+
+/* HEADER (barra fija Inicio / Contacto) */
+
+header {
+    background: linear-gradient(120deg, #020617, #0b1120, #1e293b);
+    color: #e5e7eb;
+    padding: 14px 0;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.6);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: #f9fafb;
+}
+
+header p {
+    font-size: 13px;
+    opacity: 0.85;
+    color: #cbd5f5;
+}
+
+nav {
+    margin-top: 4px;
+}
+
+/* Links de navegación: Inicio / Contacto */
+
+nav a {
+    color: #e5e7eb;
+    margin-left: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 15px;
+    position: relative;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(148, 163, 184, 0.65);
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 4px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #38bdf8, #2563eb);
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+nav a:hover,
+nav a.active {
+    background: rgba(30, 64, 175, 0.9);
+    color: #f9fafb;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.65);
+}
+
+nav a:hover::after,
+nav a.active::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px 40px;
+}
+
+/* CARD BASE (por si luego usas más tarjetas) */
+
+.card {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 20px;
+    padding: 35px 32px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+/* Título centrado de la página de inicio */
+
+.titulo-sitio {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0b1120;
+    margin-bottom: 28px;
+}
+
+/* CABECERA DE PERFIL / HERO */
+
+.hero {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 28px;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+/* Foto cuadrada a la izquierda */
+
+img.foto-perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 14px;
+    border: 4px solid rgba(37, 99, 235, 0.98);
+    box-shadow: 0 16px 34px rgba(30, 64, 175, 0.6);
+    display: block;
+    object-fit: cover;
+}
+
+.hero-text h2 {
+    color: #0b1120;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.hero-text p {
+    color: #e5e7eb;
+    font-size: 15px;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+/* SECCIONES GENERALES */
+
+section {
+    margin-top: 25px;
+    padding: 22px 20px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.02), rgba(37, 99, 235, 0.06));
+    border: 1px solid rgba(209, 213, 219, 0.8);
+}
+
+section h2,
+section h3 {
+    color: #0b1120;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+section p {
+    color: #4b5563;
+    font-size: 15px;
+    text-align: justify;
+}
+
+/* 🔹 Estilo unificado para los cuadros de Biografía y Hobbies */
+.card.about,
+section.hobbies {
+    background: linear-gradient(135deg, #0b1120, #1e293b, #1d4ed8);
+    border-radius: 20px;
+    padding: 28px 24px;
+    border: 1px solid rgba(148, 163, 184, 0.9);
+    box-shadow: 0 22px 46px rgba(15, 23, 42, 0.8);
+}
+
+/* Texto dentro de ambos cuadros (Biografía y Hobbies en color claro) */
+.card.about h2,
+.card.about p,
+.card.about strong,
+.hobbies h2,
+.hobbies p {
+    color: #e5e7eb;
+}
+
+.titulo-sitio {
+    color: #e5e7eb;
+}
+
+/* LISTA DE HOBBIES / ITEMS */
+
+ul {
+    list-style: none;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 0;
+}
+
+ul li {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(37, 99, 235, 0.9));
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: #e5e7eb;
+    border: 1px solid rgba(191, 219, 254, 0.7);
+}
+
+/* FORMULARIO (CONTACTO) */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 18px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label {
+    font-weight: 600;
+    color: #0b1120;
+    margin-bottom: 4px;
+    font-size: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+    font-family: inherit;
+    font-size: 15px;
+    transition: all 0.25s ease;
+    background: #f9fafb;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+    background: #ffffff;
+}
+
+textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+/* BOTÓN */
+
+button {
+    padding: 13px 30px;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(120deg, #1e40af, #2563eb);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    font-size: 15px;
+    align-self: flex-start;
+    box-shadow: 0 12px 24px rgba(30, 64, 175, 0.5);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(30, 64, 175, 0.7);
+    filter: brightness(1.05);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 18px rgba(30, 64, 175, 0.5);
+}
+
+/* MENSAJES DE CONFIRMACIÓN O ERROR */
+
+.alert {
+    margin-top: 15px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.alert-success {
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.5);
+    color: #065f46;
+}
+
+.alert-error {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(248, 113, 113, 0.65);
+    color: #7f1d1d;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 20px 15px 25px;
+    background: #020617;
+    color: #e5e7eb;
+    font-size: 13px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(148, 163, 184, 0.45);
+}
+
+footer p {
+    margin: 4px 0;
+    opacity: 0.9;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    img.foto-perfil {
+        margin: 0 auto;
+    }
+
+    .hero-text {
+        text-align: justify;
+    }
+
+    nav {
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        margin: 25px auto;
+        padding: 0 15px 25px;
+    }
+
+    .card {
+        padding: 25px 20px;
+    }
+
+    header h1 {
+        font-size: 19px;
+    }
+
+    nav a {
+        margin-left: 8px;
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+        text-align: center;
+        align-self: stretch;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 4px 8px 0 0;
+    }
+
+    main {
+        margin: 18px auto;
+        padding: 0 12px 22px;
+    }
+}
