@@ -24,16 +24,15 @@ Una vez que el formulario es enviado, el usuario recibe un mensaje de confirmaci
 
 Estos son los archivos que componen el funcionamiento central de mi proyecto:
 
-| Archivo | Función |
-|---------|---------|
-| **`index.php`** | Página principal con biografía, hobbies e información general. |
-| **`contacto.php`** | Formulario con validación HTML5 para enviar mensajes. Incluye:
-  - Validación básica en el cliente mediante atributos HTML5 (`required`, `type="email"`, `minlength`, `maxlength`).
-  - Envío de los datos mediante `POST` a `procesar_formulario.php`. |
-| **`procesar_formulario.php`** | Recibe el formulario por POST, valida en el servidor e inserta el mensaje en la BD. Muestra un **mensaje de confirmación** o error al usuario.|
-| **`db_config.php`** | Configura la conexión a la base de datos MySQL mediante `mysqli`. |
-| **`styles.css`** | Hoja de estilos que define la apariencia del sitio (colores, diseño, tarjetas, botones). |
-| **mi-foto.jpg** | Mi imagen mostrada en la página principal. |
+| Archivo | Descripción |
+|---------|-------------|
+| **`index.php`** | Página principal que muestra mi biografía, fotografía, hobbies e información general. |
+| **`contacto.php`** | Página que contiene el formulario de contacto con validación HTML5. <br> Incluye: <br> • Validación en el cliente mediante `required`, `type="email"`, `minlength`, `maxlength`. <br> • Envío de los datos mediante `POST` hacia `procesar_formulario.php`. |
+| **`procesar_formulario.php`** | Recibe los datos del formulario, realiza validación en el servidor e inserta la información en la base de datos. <br> Muestra un mensaje de **confirmación** o **error** según el resultado del envío. |
+| **`db_config.php`** | Contiene la configuración y creación de la conexión a la base de datos MySQL utilizando `mysqli`. |
+| **`styles.css`** | Define toda la apariencia visual del sitio (colores azul marino y celeste, tarjetas, tipografías, botones, disposición responsive). |
+| **`mi-foto.jpg`** | Imagen utilizada en la página principal como fotografía del perfil. |
+
 
 ---
 
