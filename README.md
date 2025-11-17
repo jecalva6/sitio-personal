@@ -26,12 +26,14 @@ Estos son los archivos que componen el funcionamiento central de mi proyecto:
 
 | Archivo | Función |
 |---------|---------|
-| **index.php** | Página principal con biografía, hobbies e información general. |
-| **contacto.php** | Formulario con validación HTML5 para enviar mensajes. |
-| **procesar_formulario.php** | Recibe el formulario por POST, valida en el servidor e inserta el mensaje en la BD. |
-| **db_config.php** | Configura la conexión a la base de datos MySQL mediante `mysqli`. |
-| **styles.css** | Hoja de estilos que define la apariencia del sitio (colores, diseño, tarjetas, botones). |
-| **mi-foto.jpg** (opcional) | Imagen del autor mostrada en la página principal. |
+| **`index.php`** | Página principal con biografía, hobbies e información general. |
+| **`contacto.php`** | Formulario con validación HTML5 para enviar mensajes. Incluye:
+  - Validación básica en el cliente mediante atributos HTML5 (`required`, `type="email"`, `minlength`, `maxlength`).
+  - Envío de los datos mediante `POST` a `procesar_formulario.php`. |
+| **`procesar_formulario.php`** | Recibe el formulario por POST, valida en el servidor e inserta el mensaje en la BD. Muestra un **mensaje de confirmación** o error al usuario.|
+| **`db_config.php`** | Configura la conexión a la base de datos MySQL mediante `mysqli`. |
+| **`styles.css`** | Hoja de estilos que define la apariencia del sitio (colores, diseño, tarjetas, botones). |
+| **mi-foto.jpg** | Mi imagen mostrada en la página principal. |
 
 ---
 
