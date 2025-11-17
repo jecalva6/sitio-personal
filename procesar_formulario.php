@@ -1,5 +1,5 @@
 <?php
-// Inicializamos variables
+
 $mensaje_confirmacion = "";
 $es_error = false;
 
@@ -19,12 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $es_error = true;
     }
 
-    // Si no hay errores de validación, intentamos guardar en BD
+    
     if (!$es_error) {
-        // 3. Conexión a la base de datos
+       
         require_once "db_config.php"; // aquí se crea $conexion
 
-        // 4. Preparar la sentencia SQL
+        
         $sql = "INSERT INTO mensajes (nombre, correo, mensaje, fecha_envio) 
                 VALUES (?, ?, ?, NOW())";
 
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $mensaje_confirmacion = "Error al preparar la consulta en la base de datos: " . $conexion->error;
             $es_error = true;
         } else {
-            // 5. Vincular parámetros y ejecutar
+            
             $stmt->bind_param("sss", $nombre, $correo, $mensaje);
 
             if ($stmt->execute()) {
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $conexion->close();
     }
 } else {
-    // Si alguien entra directo sin enviar el formulario, lo mandamos al formulario
+    
     header("Location: contacto.php");
     exit;
 }
@@ -107,4 +107,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Procesar formulario de contacto</title>
+
     <link rel="stylesheet" href="styles.css">
